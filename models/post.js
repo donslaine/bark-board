@@ -4,6 +4,10 @@ const commentSchema = require("./comment")
 
 const postSchema = new Schema(
     {
+        Title: {
+            type: String,
+            required: true
+        },
         Text: {
             type: String,
             required: true
