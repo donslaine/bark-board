@@ -1,6 +1,6 @@
 const Post = require('../../models/post')
 
-export async function createPost(req, res) {
+async function createPost(req, res) {
     try {
         const post = await Post.create(req.body)
         res.json(post)
@@ -8,3 +8,5 @@ export async function createPost(req, res) {
         res.status(400).json(error)
     }
 }
+
+module.exports = { createPost }
