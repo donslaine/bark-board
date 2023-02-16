@@ -5,7 +5,7 @@ export default function CreatePost() {
     const [post, setPost] = useState({
         title: '',
         pet: '',
-        content: '',
+        text: '',
         category: ''
     })
 
@@ -13,14 +13,14 @@ export default function CreatePost() {
         setPost({...post, 
         [event.target.name]: event.target.value
         })
-        console.log(post)
     }
 
     async function handleSubmit(event) {
         event.preventDefault()
         try {
-            const newPost = await create(post)
-            setPost(newPost)
+            const formData = {...post}
+            // console.log(formData)
+            await create(formData)
         } catch (error){
             console.error(error)
         }
@@ -30,13 +30,13 @@ export default function CreatePost() {
         <>
             <form onClick={handleSubmit}>
                 <label>Title</label>
-                <input type='text' name='title' onChange={handleChange}/>
+                <input type='text' name='title' value={post.title} onChange={handleChange}/>
                 <label>Pet</label>
-                <input type='text' name='pet' onChange={handleChange}/>
-                <label>Content</label>
-                <input type='text' name='content' onChange={handleChange}/>
+                <input type='text' name='pet' value={post.pet} onChange={handleChange}/>
+                <label>Text</label>
+                <input type='text' name='text' value={post.content} onChange={handleChange}/>
                 <label>Category</label>
-                <input type='text' name='category' onChange={handleChange}/>
+                <input type='text' name='category' value={post.category} onChange={handleChange}/>
                 <button type='submit'>Create Post</button>
             </form>
         </>

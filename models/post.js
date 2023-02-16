@@ -4,32 +4,32 @@ const commentSchema = require("./comment")
 
 const postSchema = new Schema(
     {
-        Title: {
+        title: {
             type: String,
             required: true
         },
-        Text: {
+        text: {
             type: String,
             required: true
         },
-        Category:{
+        category:{
             type: String,
             required: false
         },
-        SortOrder: {
-            type: Date,
-            required: true
-        },
-        Pet: {
+        // sortOrder: {
+        //     type: Date,
+        //     required: true
+        // },
+        pet: {
             type: String,
             required: true
         },
-        Owner: {
-            type: Schema.Types.ObjectId,
-			ref: 'User',
-			required: true,
-        },
-        Comment: {
+        // owner: {
+        //     type: Schema.Types.ObjectId,
+		// 	ref: 'User',
+		// 	required: true,
+        // },
+        comment: {
             type: [commentSchema.Schema],
             required: false
         }
