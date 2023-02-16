@@ -14,7 +14,7 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/posts" element={<GlobalPage />} />
+            <Route path="/api/posts/new" element={<GlobalPage />} />
           </Routes>
         </>
         ) : (

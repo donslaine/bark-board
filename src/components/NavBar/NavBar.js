@@ -10,7 +10,7 @@ export default function NavBar({ user, setUser }) {
     }
     return (
         <nav>
-            <Link to="/posts">Posts</Link>
+            <Link to="/api/posts/new">Posts</Link>
             &nbsp; | &nbsp;
             <Link to="/profile">Profile</Link>
             &nbsp; | &nbsp;
