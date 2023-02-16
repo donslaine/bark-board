@@ -15,8 +15,12 @@ export default async function sendRequest(url, method = 'GET', payload = null) {
 		options.headers.Authorization = `Bearer ${token}`
 	}
 	const res = await fetch(url, options)
+    console.log(res)
 	// res.ok will be false if the status code set to 4xx in the controller action
-	if (res.ok) return res.json()
+	if (res.ok) 
+        {
+        return res.json()}
+        
 	else if (!res.ok) console.log(res.error)
 	// throw new Error('Bad Request')
 }
