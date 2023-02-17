@@ -14,14 +14,9 @@ export function create(data) {
 
 
 export function index(){
-    // return fetch("/api/posts/index", {
-    //     // method: "GET",
-    //     // headers: {
-    //     //     "Accept": "application/json",
-    //     //     "Content-Type": "application/json",
-    //     },
-
-    }
+    return fetch("/api/posts/index/all", {
+    })
+}
 
 
 // export const createList = (data) => {

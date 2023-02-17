@@ -6,4 +6,6 @@ router.post('/new', postsCtrl.createPost)
 
 
 router.get("/all", postsCtrl.indexPost)
+
+
 module.exports = router

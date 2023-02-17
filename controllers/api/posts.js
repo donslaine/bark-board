@@ -36,13 +36,16 @@ function createPost(req, res, next) {
 // }
 
 function indexPost (req, res, next){
+    // console.log(req)
     Post.find()
-    .then((posts) => {
-        return posts.map((posts) => posts)
-        
-    })
-    .then((posts) => res.status(200).json({ posts: posts }))
-    .catch(next)
+        .then((posts) => {
+            // console.log(posts)
+            return posts.map((posts) => posts)
+        })
+        .then((posts) => {
+            return res.status(200).json({ posts: posts })
+        })
+        .catch(next)
 }
 
 
