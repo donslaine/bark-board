@@ -24,4 +24,31 @@ function createPost(req, res, next) {
 
 }
 
-module.exports = { createPost }
+
+// function indexPost(req, res, next){
+
+//     const post = req.body
+//     Post.find(post)
+//     .then((post) =>{
+//         res.status(200).json({ post: post })
+//     })
+//     .catch(next)
+// }
+
+function indexPost (req, res, next){
+    Post.find()
+    .then((posts) => {
+        return posts.map((posts) => posts)
+        
+    })
+    .then((posts) => res.status(200).json({ posts: posts }))
+    .catch(next)
+}
+
+
+// function showPost ()
+
+module.exports = { 
+    createPost,
+    indexPost 
+}

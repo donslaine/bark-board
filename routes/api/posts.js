@@ -4,4 +4,6 @@ const postsCtrl = require('../../controllers/api/posts')
 
 router.post('/new', postsCtrl.createPost)
 
+
+router.get("/all", postsCtrl.indexPost)
 module.exports = router

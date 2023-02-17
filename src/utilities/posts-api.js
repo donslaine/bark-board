@@ -12,6 +12,18 @@ export function create(data) {
     })
 }
 
+
+export function index(){
+    // return fetch("/api/posts/index", {
+    //     // method: "GET",
+    //     // headers: {
+    //     //     "Accept": "application/json",
+    //     //     "Content-Type": "application/json",
+    //     },
+
+    }
+
+
 // export const createList = (data) => {
 //     console.log(store.userToken);
 //     return fetch(`http://localhost:8000/lists`, {
