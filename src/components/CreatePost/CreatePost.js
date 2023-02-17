@@ -19,7 +19,6 @@ export default function CreatePost() {
         event.preventDefault()
         try {
             const formData = {...post}
-            // console.log(formData)
             await create(formData)
         } catch (error){
             console.error(error)
