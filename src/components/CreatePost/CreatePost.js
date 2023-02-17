@@ -28,7 +28,7 @@ export default function CreatePost() {
 
     return(
         <>
-            <form onClick={handleSubmit}>
+            <form>
                 <label>Title</label>
                 <input type='text' name='title' value={post.title} onChange={handleChange}/>
                 <label>Pet</label>
@@ -37,7 +37,7 @@ export default function CreatePost() {
                 <input type='text' name='text' value={post.content} onChange={handleChange}/>
                 <label>Category</label>
                 <input type='text' name='category' value={post.category} onChange={handleChange}/>
-                <button type='submit'>Create Post</button>
+                <button type='submit' onClick={handleSubmit}>Create Post</button>
             </form>
         </>
     )
