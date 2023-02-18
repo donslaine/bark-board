@@ -3,15 +3,20 @@ const Schema = mongoose.Schema
 
 const commentSchema = new Schema(
     {
-        Text: {
+        text: {
             type: String,
             required: true
         },
-        Owner: {
-            type: Schema.Types.ObjectId,
-			ref: 'User',
-			required: true,
-        }
+        // owner: {
+        //     type: Schema.Types.ObjectId,
+		// 	ref: 'User',
+		// 	required: true,
+        // },
+        // postedOn: {
+        //     type: Schema.Types.ObjectId,
+		// 	ref: 'Post',
+		// 	required: true,
+        // }
  
     },
     {
@@ -19,4 +24,4 @@ const commentSchema = new Schema(
     }
 )
 
-module.exports = mongoose.model('Comment', commentSchema)
+module.exports = commentSchema
