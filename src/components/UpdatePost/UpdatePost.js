@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { update } from '../../utilities/posts-api'
 import { useParams } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 export default function UpdatePost({ post, postList }) {
     let {postId} = useParams()
@@ -47,7 +48,7 @@ export default function UpdatePost({ post, postList }) {
                 <input type='text' name='text' defaultValue= {singlePostId.text} onChange={handleChange} />
                 <label>Category</label>
                 <input type='text' name='category' defaultValue= {singlePostId.category} onChange={handleChange} />
-                <button type='submit' onClick={handleSubmit}>Update Post</button>
+                <button type='submit' onClick={handleSubmit}><Link className="UpdatePost" to='/posts' >Update Post</Link></button>
             </form>
         </div>
     )
