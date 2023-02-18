@@ -10,11 +10,22 @@ export default function GlobalPage() {
         index()
             .then((res)=> res.json())
             .then((resData) => setPostArr(resData.posts))           
-    }, [postArr])
+    }, [])
 
     function deletePost(id) {
-        removePost(id)
+        removePost(id) 
+        .then(() => {
+            return index()
+        })
+        .then((res)=> res.json())
+        .then((resData) => setPostArr(resData.posts))  
     }
+
+    // function handleDelete(){
+    //     index()
+    //     .then((res)=> res.json())
+    //     .then((resData) => setPostArr(resData.posts))  
+    // }
 
     const postMap = postArr.map((post, index) => (
         <Post post={post} key={index} deletePost={deletePost} />
