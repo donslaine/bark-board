@@ -23,10 +23,8 @@ function deletePost(req, res, next) {
 }
 
 function indexPost (req, res, next){
-    // console.log(req)
     Post.find()
         .then((posts) => {
-            // console.log(posts)
             return posts.map((posts) => posts)
         })
         .then((posts) => {
@@ -38,7 +36,8 @@ function indexPost (req, res, next){
 function updatePost (req, res, next) {
     Post.findById(req.params.id)
         .then(post => {
-            return post.updateOne(req.body.post)
+            
+            return post.updateOne(req.body)
         })
         .then(() => res.sendStatus(204))
         .catch(next)

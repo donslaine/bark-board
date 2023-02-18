@@ -13,7 +13,7 @@ export default function UpdatePost({ post, postList }) {
         title: `${singlePostId.title}`,
         pet: `${singlePostId.pet}`,
         text: `${singlePostId.text}`,
-        category: `${singlePostId.category}`
+        category: `${singlePostId.category}`,
     }) 
    
 
@@ -28,7 +28,7 @@ export default function UpdatePost({ post, postList }) {
         event.preventDefault()
         try {
             const formData = {...updatePost}
-            await update(formData)
+            await update(formData, postId)
         } catch (error){
             console.error(error)
         }
@@ -40,13 +40,13 @@ export default function UpdatePost({ post, postList }) {
 
             <form>
                 <label>Title</label>
-                <input type='text' name='title' value= {singlePostId.title} onChange={handleChange} />
+                <input type='text' name='title' defaultValue= {singlePostId.title} onChange={handleChange} />
                 <label>Pet</label>
-                <input type='text' name='pet' value= {singlePostId.pet} onChange={handleChange} />
+                <input type='text' name='pet' defaultValue= {singlePostId.pet} onChange={handleChange} />
                 <label>Text</label>
-                <input type='text' name='text' value= {singlePostId.text} onChange={handleChange} />
+                <input type='text' name='text' defaultValue= {singlePostId.text} onChange={handleChange} />
                 <label>Category</label>
-                <input type='text' name='category' value= {singlePostId.category} onChange={handleChange} />
+                <input type='text' name='category' defaultValue= {singlePostId.category} onChange={handleChange} />
                 <button type='submit' onClick={handleSubmit}>Update Post</button>
             </form>
         </div>

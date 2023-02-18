@@ -25,8 +25,10 @@ export function removePost(id) {
 }
 
 export function update(data, id) {
+    // console.log(data)
+    // console.log(id)
     return fetch(`/api/posts/${id}`, {
-        method: 'Patch',
+        method: 'PATCH',
         headers: {
             "Accept": "application/json",
             "Content-Type": "application/json",
