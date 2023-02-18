@@ -30,6 +30,7 @@ app.use('/api/users/login', require('./routes/api/users'))
 app.use('/api/posts', require('./routes/api/posts'))
 app.use("/api/posts/index", require("./routes/api/posts"))
 
+
 // the following "catch-all" route (note the *) is necessary to return the index.html on all non-AJAX requests
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'))

@@ -21,11 +21,7 @@ export default function GlobalPage() {
         .then((resData) => setPostArr(resData.posts))  
     }
 
-    // function handleDelete(){
-    //     index()
-    //     .then((res)=> res.json())
-    //     .then((resData) => setPostArr(resData.posts))  
-    // }
+   
 
     const postMap = postArr.map((post, index) => (
         <Post post={post} key={index} deletePost={deletePost} />
@@ -33,7 +29,7 @@ export default function GlobalPage() {
     
     return (
         <div>
-            <h2>GlobalPage</h2>
+            <h2>Discover</h2>
             <CreatePost />
             {postMap}
         </div>

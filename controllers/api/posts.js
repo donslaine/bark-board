@@ -35,8 +35,18 @@ function indexPost (req, res, next){
         .catch(next)
 }
 
+function updatePost (req, res, next) {
+    Post.findById(req.params.id)
+        .then(post => {
+            return post.updateOne(req.body.post)
+        })
+        .then(() => res.sendStatus(204))
+        .catch(next)
+}
+
 module.exports = { 
     createPost,
     deletePost,
-    indexPost
+    indexPost,
+    updatePost
  }
