@@ -18,6 +18,12 @@ export function index(){
     })
 }
 
+export function removePost(id) {
+    return fetch(`/api/posts/${id}`, {
+        method: 'DELETE',
+    })
+}
+
 
 // export const createList = (data) => {
 //     console.log(store.userToken);
