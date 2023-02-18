@@ -24,6 +24,17 @@ export function removePost(id) {
     })
 }
 
+export function update(data, id) {
+    return fetch(`/api/posts/${id}`, {
+        method: 'Patch',
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data)
+    })
+}
+
 
 // export const createList = (data) => {
 //     console.log(store.userToken);

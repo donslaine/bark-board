@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import { getUser } from '../../utilities/users-service'
 import AuthPage from '../AuthPage/AuthPage'
 import GlobalPage from '../GlobalPage/GlobalPage'
+import UpdatePost from '../../components/UpdatePost/UpdatePost'
 import NavBar from '../../components/NavBar/NavBar'
 import './App.css';
 
@@ -14,7 +15,8 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/posts" element={<GlobalPage />} />
+            <Route path='/posts' element={<GlobalPage />} />
+            <Route path='/update' element={<UpdatePost />} />
           </Routes>
         </>
         ) : (
