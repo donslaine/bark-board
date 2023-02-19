@@ -29,6 +29,7 @@ export default function CreatePost() {
     return (
         <>
             <form>
+
                 <div class='form-floating'>
                 <input class='form-control' type='text' name='title' placeholder='Add Title' value={post.title} onChange={handleChange} />
                 <label class='form-label'>Title</label>
@@ -46,6 +47,8 @@ export default function CreatePost() {
                 <label class='form-label'>Category</label>
                 </div>
                 <button class ='btn btn-primary mt-3 mb-3' type='submit' onClick={handleSubmit}>Create Post</button>
+
+               
             </form>
         </>
     )
