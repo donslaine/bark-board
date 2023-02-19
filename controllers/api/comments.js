@@ -5,8 +5,11 @@ function createComment(req, res, next) {
   const comment = req.body.comments
   // comment.owner = req.user._id
   const postId = req.body.comments.postId
+  console.log(req.body.comments)
   Post.findById(postId)
+  // .then(console.log(req.body.comments))
     .then((post) =>{
+        console.log(post)
         post.comments.push(comment)
         return post.save()
     } )
