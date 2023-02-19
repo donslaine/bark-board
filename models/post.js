@@ -29,7 +29,7 @@ const postSchema = new Schema(
 		// 	ref: 'User',
 		// 	required: true,
         // },
-        comment: [commentSchema]
+        comments: [commentSchema]
     },
     {
         timestamps: true
