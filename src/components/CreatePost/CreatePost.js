@@ -29,15 +29,15 @@ export default function CreatePost() {
     return (
         <>
             <form>
-                <label>Title</label>
-                <input type='text' name='title' value={post.title} onChange={handleChange} />
-                <label>Pet</label>
-                <input type='text' name='pet' value={post.pet} onChange={handleChange} />
-                <label>Text</label>
-                <input type='text' name='text' value={post.content} onChange={handleChange} />
-                <label>Category</label>
-                <input type='text' name='category' value={post.category} onChange={handleChange} />
-                <button type='submit' onClick={handleSubmit}>Create Post</button>
+                <label className="form-label text-justify">Title</label>
+                <input className="form-control" type='text' name='title' value={post.title} onChange={handleChange} />
+                <label className="form-label">Pet</label>
+                <input className="form-control" type='text' name='pet' value={post.pet} onChange={handleChange} />
+                <label className="form-label">Text</label>
+                <textarea className="form-control" rows='6'name='text' value={post.content} onChange={handleChange} />
+                <label className="form-label">Category</label>
+                <input className="form-control" type='text' name='category' value={post.category} onChange={handleChange} />
+                <button className ='btn btn-primary mt-3 mb-3' type='submit' onClick={handleSubmit}>Create Post</button>
             </form>
         </>
     )

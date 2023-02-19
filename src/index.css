@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -13,7 +13,7 @@ code {
 }
 
 /* CSS Custom Properties */
-:root {
+/* :root {
   --white: #FFFFFF;
   --tan-1: #FBF9F6;
   --tan-2: #E7E2DD;
@@ -22,9 +22,9 @@ code {
   --orange: #F67F00;
   --text-light: #968c84;
   --text-dark: #615954;
-}
+} */
 
-*, *:before, *:after {
+/* *, *:before, *:after {
   box-sizing: border-box;
 }
 
@@ -124,7 +124,7 @@ input {
   border-radius: .5vmin;
   color: var(--text-dark);
   background-image: none !important; /* prevent lastpass */
-  outline: none;
+  /* outline: none;
 }
 
 input:focus {
@@ -159,9 +159,9 @@ button.btn-xs {
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
   background-color: var(--tan-4);
-}
+} */
 
-button[type="submit"] {
+/* button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
-}
+} */ 

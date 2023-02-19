@@ -28,7 +28,7 @@ export default function GlobalPage({ postList }) {
     ))
     
     return (
-        <div>
+        <div className='container-sm'>
             <h2>Discover</h2>
             <CreatePost />
             {postMap}
