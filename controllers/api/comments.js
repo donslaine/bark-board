@@ -2,14 +2,11 @@ const Post = require("../../models/post")
 const Comment = require("../../models/comment")
 
 function createComment(req, res, next) {
-  const comment = req.body.comments
+  const comment = req.body
   // comment.owner = req.user._id
-  const postId = req.body.comments.postId
-  console.log(req.body.comments)
+  const postId = req.body.postId
   Post.findById(postId)
-  // .then(console.log(req.body.comments))
     .then((post) =>{
-        console.log(post)
         post.comments.push(comment)
         return post.save()
     } )
