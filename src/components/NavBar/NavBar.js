@@ -11,12 +11,12 @@ export default function NavBar({ user, setUser }) {
     return (
         <>
         <nav className=' nav navbar navbar-dark bg-dark d-flex'>
-            <div className='d-flex justify-content-start'>
+            <div className='justify-content-start d-flex'>
             <Link className= "nav-link text-white" to="/posts">Discover</Link>
             <Link className= "nav-link text-white" to="/profile">Profile</Link>
             </div>
-            <span className= "nav-link text-white">BarkBoard</span>
-         <Link className= "nav-link text-white d-flex justify-content-end" to='' onClick={handleLogOut}>Log Out</Link>
+            <div className= "nav-link text-white">BarkBoard</div>
+         <Link className= "nav-link text-white justify-content-end" to='' onClick={handleLogOut}>Log Out</Link>
         </nav>
         <span className='mt-3'>Hello there, { user.name }</span>
         </>

@@ -29,16 +29,26 @@ export default function CreatePost() {
     return (
         <>
             <form>
-                <div></div>
-                <label className="form-label text-justify">Title</label>
-                <input className="form-control" type='text' name='title' value={post.title} onChange={handleChange} />
-                <label className="form-label">Pet</label>
-                <input className="form-control" type='text' name='pet' value={post.pet} onChange={handleChange} />
-                <label className="form-label">Text</label>
-                <textarea className="form-control" rows='6'name='text' value={post.content} onChange={handleChange} />
-                <label className="form-label">Category</label>
-                <input className="form-control" type='text' name='category' value={post.category} onChange={handleChange} />
-                <button className ='btn btn-success mt-3 mb-3' type='submit' onClick={handleSubmit}>Create Post</button>
+
+                <div class='form-floating'>
+                <input class='form-control' type='text' name='title' placeholder='Add Title' value={post.title} onChange={handleChange} />
+                <label class='form-label'>Title</label>
+                </div>
+                <div class='form-floating'>
+                <input class='form-control' type='text' name='pet' placeholder='Add Pet' value={post.pet} onChange={handleChange} />
+                <label class='form-label'>Pet</label>
+                </div>
+                <div class='form-floating'>
+                <textarea class='form-control' placeholder='Add Text' name='text' value={post.content} onChange={handleChange} />
+                <label class='form-label'>Text</label>
+                </div>
+                <div class='form-floating'>
+                <input class='form-control' type='text' name='category' placeholder='Add Category' value={post.category} onChange={handleChange} />
+                <label class='form-label'>Category</label>
+                </div>
+                <button class ='btn btn-primary mt-3 mb-3' type='submit' onClick={handleSubmit}>Create Post</button>
+
+               
             </form>
         </>
     )
