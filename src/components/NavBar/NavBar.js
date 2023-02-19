@@ -9,14 +9,16 @@ export default function NavBar({ user, setUser }) {
         setUser(null)
     }
     return (
-        <nav>
-            <Link to="/posts">Posts</Link>
-            &nbsp; | &nbsp;
-            <Link to="/profile">Profile</Link>
-            &nbsp; | &nbsp;
-            <span>Hello there, { user.name }</span>
-            &nbsp; | &nbsp;
-            <Link to='' onClick={handleLogOut}>Log Out</Link>
+        <>
+        <nav className=' nav navbar navbar-dark bg-dark d-flex'>
+            <div className='d-flex justify-content-start'>
+            <Link className= "nav-link text-white" to="/posts">Discover</Link>
+            <Link className= "nav-link text-white" to="/profile">Profile</Link>
+            </div>
+            <span className= "nav-link text-white">BarkBoard</span>
+         <Link className= "nav-link text-white d-flex justify-content-end" to='' onClick={handleLogOut}>Log Out</Link>
         </nav>
+        <span className='mt-3'>Hello there, { user.name }</span>
+        </>
     )
 }
