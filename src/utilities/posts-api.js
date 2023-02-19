@@ -49,17 +49,3 @@ export function update(data, id) {
         body: JSON.stringify(data)
     })
 }
-
-
-// export const createList = (data) => {
-//     console.log(store.userToken);
-//     return fetch(`http://localhost:8000/lists`, {
-//       method: "POST",
-//       headers: {
-//         "Authorization": `Bearer ${store.userToken}`,
-//         "Accept": "application/json",
-//         "Content-Type": "application/json",
-//       },
-//       body: JSON.stringify(data),
-//     })
-//   }
