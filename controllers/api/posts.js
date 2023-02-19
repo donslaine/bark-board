@@ -18,8 +18,7 @@ function deletePost(req, res, next) {
                 return post.deleteOne()
             } else {
                 res.sendStatus(401)
-            }
-            
+            }   
         })
         .then(() => res.sendStatus(204))
         .catch(next)
@@ -39,8 +38,11 @@ function indexPost (req, res, next){
 function updatePost (req, res, next) {
     Post.findById(req.params.id)
         .then(post => {
-            
-            return post.updateOne(req.body)
+            if (post.owner.equals(req.user._id)) {
+                return post.updateOne(req.body)
+            } else {
+                res.sendStatus(401)
+            }
         })
         .then(() => res.sendStatus(204))
         .catch(next)
