@@ -3,7 +3,7 @@ const Post = require('../../models/post')
 function createPost(req, res, next) {
     // const user = req.user._id
     const post = req.body
-    // post.owner = req.user._id
+    post.owner = req.user._id
     Post.create(post)
         .then((post) => {
             res.status(201).json({ post: post })
