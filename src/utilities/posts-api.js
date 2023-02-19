@@ -1,5 +1,3 @@
-// import sendRequest from './send-request'
-// const BASE_URL = '/api/posts'
 import { getToken } from './users-service'
 
 export function create(data) {
