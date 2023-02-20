@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { create } from '../../utilities/posts-api'
 
-export default function CreatePost() {
+export default function CreatePost({ toggleFormVisiblity }) {
     const [post, setPost] = useState({
         title: '',
         pet: '',
@@ -21,6 +21,7 @@ export default function CreatePost() {
         try {
             const formData = { ...post }
             await create(formData)
+            toggleFormVisiblity()
         } catch (error) {
             console.error(error)
         }
