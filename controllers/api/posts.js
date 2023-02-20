@@ -25,7 +25,9 @@ function deletePost(req, res, next) {
 }
 
 function indexPost (req, res, next){
-    Post.find()
+    Post.find({})
+        // .sort('timestamp')
+        .populate('owner')
         .then((posts) => {
             return posts.map((posts) => posts)
         })

@@ -26,6 +26,7 @@ console.log()
       {user ? (
         <>
           <NavBar user={user} setUser={setUser} />
+          <GlobalPage />
           <Routes>
             <Route path='/posts' element={<GlobalPage />} />
             <Route path='/posts/:postId' element={<UpdatePost postList = {postList} />} />

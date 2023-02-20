@@ -21,7 +21,6 @@ export default function Post({ post, deletePost }) {
         event.preventDefault()
         try {
             const formData = { ...comment }
-            console.log(formData)
             await createComment(formData)
         } catch (error) {
             console.error(error)
@@ -36,7 +35,8 @@ export default function Post({ post, deletePost }) {
     return (
         <>
             <div className='container border rounded-2 shadow-sm mt-3 mb-3'>
-                <h2>{post.title}</h2>
+                <h2>{post.owner.name}</h2>
+                <h3>{post.title}</h3>
                 <p>{post.pet}</p>
                 <p>{post.text}</p>
                 <p>{post.category}</p>
