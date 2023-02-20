@@ -1,7 +1,7 @@
 import {Link} from 'react-router-dom'
 import { useState } from 'react'
 import ShowComment from '../ShowComment/ShowComment'
-import {createComment} from "../../utilities/comments-api.js"
+import {createComment, deleteComment} from "../../utilities/comments-api.js"
 export default function Post ({ post, deletePost }) {
 
     const[comment, setComment] = useState({
@@ -27,6 +27,11 @@ export default function Post ({ post, deletePost }) {
         }
     }
 
+    function handleDeleteComment(event) {
+        const deleteReq = {comments: { postId: post._id }}
+        deleteComment(deleteReq, event.target.id)
+    }
+
     return (
         <>
             <div className='container border rounded-2 shadow-sm mt-3 mb-3'>
@@ -36,7 +41,9 @@ export default function Post ({ post, deletePost }) {
                 <p>{post.category}</p>
                 <button className='btn btn-danger mx-2 my-2' onClick={() => deletePost(post._id)}>Delete</button>
             <Link to={`/posts/${post._id}`} >
-                <button className='btn btn-primary mx-2 my-2'>Update</button>
+                <button 
+                    className='btn btn-primary mx-2 my-2'
+                >Update</button>
             </Link>
 
             <label>Create Comment</label>
@@ -50,7 +57,10 @@ export default function Post ({ post, deletePost }) {
                 onClick={onSubmit}
             >Create</button>
         
-            <ShowComment postComment = {post.comments} />
+            <ShowComment 
+                postComment={post.comments} 
+                handleDeleteComment={handleDeleteComment}
+            />
 
             </div>
         </>

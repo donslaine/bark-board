@@ -1,8 +1,10 @@
-export default function CommentBody({ text }) {
+export default function CommentBody({ text, handleDeleteComment, id }) {
+
+
     return (
         <>
         {text}
-        <button>Delete Comment</button>
+        <button onClick={handleDeleteComment} id={id}>Delete Comment</button>
         </>
     )
 }

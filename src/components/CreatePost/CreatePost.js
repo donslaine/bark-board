@@ -30,23 +30,23 @@ export default function CreatePost() {
         <>
             <form>
 
-                <div class='form-floating'>
-                <input class='form-control' type='text' name='title' placeholder='Add Title' value={post.title} onChange={handleChange} />
-                <label class='form-label'>Title</label>
+                <div className='form-floating'>
+                <input className='form-control' type='text' name='title' placeholder='Add Title' value={post.title} onChange={handleChange} />
+                <label className='form-label'>Title</label>
                 </div>
-                <div class='form-floating'>
-                <input class='form-control' type='text' name='pet' placeholder='Add Pet' value={post.pet} onChange={handleChange} />
-                <label class='form-label'>Pet</label>
+                <div className='form-floating'>
+                <input className='form-control' type='text' name='pet' placeholder='Add Pet' value={post.pet} onChange={handleChange} />
+                <label className='form-label'>Pet</label>
                 </div>
-                <div class='form-floating'>
-                <textarea class='form-control' placeholder='Add Text' name='text' value={post.content} onChange={handleChange} />
-                <label class='form-label'>Text</label>
+                <div className='form-floating'>
+                <textarea className='form-control' placeholder='Add Text' name='text' value={post.content} onChange={handleChange} />
+                <label className='form-label'>Text</label>
                 </div>
-                <div class='form-floating'>
-                <input class='form-control' type='text' name='category' placeholder='Add Category' value={post.category} onChange={handleChange} />
-                <label class='form-label'>Category</label>
+                <div className='form-floating'>
+                <input className='form-control' type='text' name='category' placeholder='Add Category' value={post.category} onChange={handleChange} />
+                <label className='form-label'>Category</label>
                 </div>
-                <button class ='btn btn-primary mt-3 mb-3' type='submit' onClick={handleSubmit}>Create Post</button>
+                <button className ='btn btn-primary mt-3 mb-3' type='submit' onClick={handleSubmit}>Create Post</button>
 
                
             </form>
