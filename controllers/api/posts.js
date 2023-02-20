@@ -1,3 +1,4 @@
+const { populate } = require('../../models/post')
 const Post = require('../../models/post')
 
 function createPost(req, res, next) {
@@ -50,9 +51,23 @@ function updatePost (req, res, next) {
         .catch(next)
 }
 
+function indexMyPosts(req, res, next) {
+    const user = req.user._id
+    Post.find( { "owner": user } )
+    .populate("owner")
+        .then((posts) => {
+            return posts.map((posts) => posts)
+        })
+        .then(((posts) => { 
+           return res.status(200).json({ posts: posts })
+        }))
+        .catch(next)
+}
+
 module.exports = { 
     createPost,
     deletePost,
     indexPost,
-    updatePost
+    updatePost,
+    indexMyPosts
  }
