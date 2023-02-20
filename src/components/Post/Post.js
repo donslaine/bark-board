@@ -4,6 +4,7 @@ import ShowComment from '../ShowComment/ShowComment'
 import { createComment, deleteComment } from "../../utilities/comments-api.js"
 export default function Post({ post, deletePost }) {
 
+
     const [comment, setComment] = useState({
         text: "",
         postId: `${post._id}`
