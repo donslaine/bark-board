@@ -3,7 +3,7 @@ import CreatePost from '../../components/CreatePost/CreatePost'
 import { index, removePost } from '../../utilities/posts-api'
 import Post from '../../components/Post/Post'
 
-export default function GlobalPage({ setPostList }) {
+export default function GlobalPage() {
 
     const [showForm, setShowForm] = useState(false)
 
