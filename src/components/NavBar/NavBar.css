@@ -1,0 +1,24 @@
+.nav {
+    background-color: #FB8500;
+}
+
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo img {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    right: 10px;
+    background: #FB8500;
+}
+
+.logo #logo-name {
+    font-size: 25px;
+    font-family: 'Righteous', cursive;
+}
