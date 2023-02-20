@@ -4,7 +4,15 @@ import ShowComment from '../ShowComment/ShowComment'
 import { createComment, deleteComment } from "../../utilities/comments-api.js"
 import './Post.css'
 
+
 export default function Post({ post, deletePost }) {
+
+    const [commentsVisible, setCommentsVisible] = useState(false)
+
+    function toggleCommentsVisible () {
+        setCommentsVisible(!commentsVisible)
+    }
+
     const [comment, setComment] = useState({
         text: "",
         postId: `${post._id}`
@@ -23,6 +31,9 @@ export default function Post({ post, deletePost }) {
         try {
             const formData = { ...comment }
             await createComment(formData)
+            if (!commentsVisible) {
+                toggleCommentsVisible()
+            }
         } catch (error) {
             console.error(error)
         }
@@ -52,6 +63,7 @@ export default function Post({ post, deletePost }) {
                         className='btn btn-primary mx-2 my-2 btn-sm'
                     >Update</button>
                 </Link>
+                <button className ='btn btn-info mx-2 my-2' onClick ={toggleCommentsVisible}>Show Comments</button>
                 <form>
                     <div className='form-floating comment-text'>
                         <input
@@ -69,10 +81,12 @@ export default function Post({ post, deletePost }) {
                     >Create</button>
                 </form>
             </div>
-            <ShowComment
+
+            
+            {commentsVisible && <ShowComment
                 postComment={post.comments}
                 handleDeleteComment={handleDeleteComment}
-            />
+            />}
         </>
     )
 }
