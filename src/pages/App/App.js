@@ -17,19 +17,17 @@ function App() {
     index()
         .then((res)=> res.json())
         .then((resData) => setPostList(resData.posts))           
-}, [])
-
-console.log()
+  }, [])
 
   return (
     <main className="App">
       {user ? (
         <>
           <NavBar user={user} setUser={setUser} />
-          <GlobalPage />
           <Routes>
+            <Route path='/' element={<GlobalPage />} />
             <Route path='/posts' element={<GlobalPage />} />
-            <Route path='/posts/:postId' element={<UpdatePost postList = {postList} />} />
+            <Route path='/posts/:postId' element={<UpdatePost postList={postList} />} />
           </Routes>
         </>
         ) : (

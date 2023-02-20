@@ -4,7 +4,7 @@ import LoginForm from "../../components/LoginForm/LoginForm"
 export default function AuthPage({ setUser, user }) {
     return (
         <>
-            <h2>AuthPage</h2>
+            <h1>AuthPage</h1>
             <SignUpForm setUser={setUser} user={user} />
             <LoginForm setUser={setUser} user={user} />
         </>

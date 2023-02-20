@@ -2,7 +2,6 @@ const { populate } = require('../../models/post')
 const Post = require('../../models/post')
 
 function createPost(req, res, next) {
-    // const user = req.user._id
     const post = req.body
     post.owner = req.user._id
     Post.create(post)
@@ -54,7 +53,7 @@ function updatePost (req, res, next) {
 function indexMyPosts(req, res, next) {
     const user = req.user._id
     Post.find( { "owner": user } )
-    .populate("owner")
+        .populate("owner")
         .then((posts) => {
             return posts.map((posts) => posts)
         })

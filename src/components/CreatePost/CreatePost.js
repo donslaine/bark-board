@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { create } from '../../utilities/posts-api'
+import { create, index } from '../../utilities/posts-api'
 
-export default function CreatePost({ toggleFormVisiblity }) {
+export default function CreatePost({ toggleFormVisiblity, setPostArr }) {
     const [post, setPost] = useState({
         title: '',
         pet: '',
@@ -21,6 +21,11 @@ export default function CreatePost({ toggleFormVisiblity }) {
         try {
             const formData = { ...post }
             await create(formData)
+                .then(() => {
+                    return index()
+                })
+                .then((res)=> res.json())
+                .then((resData) => setPostArr(resData.posts))
             toggleFormVisiblity()
         } catch (error) {
             console.error(error)
