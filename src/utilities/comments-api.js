@@ -15,6 +15,8 @@ export function createComment(data) {
 
 export const deleteComment = (data, id) => {
     const token = getToken()
+    console.log(data)
+    console.log(id)
     return fetch(`api/comments/${id}`, {
         method: 'DELETE',
         headers: {

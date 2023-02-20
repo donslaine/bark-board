@@ -1,5 +1,4 @@
 const Post = require("../../models/post")
-const Comment = require("../../models/comment")
 
 function createComment(req, res, next) {
   const comment = req.body
@@ -19,14 +18,10 @@ function createComment(req, res, next) {
 function deleteComment(req, res, next) {
   const commentId = req.params.commentId
   const postId = req.body.comments.postId
+  console.log(req.body)
   Post.findById(postId)
     .then(post => {
       post.comments.id(commentId).remove()
-      // post.comments.forEach(index => {
-      //   if (index.id === commentId) {
-      //     index.remove()
-      //   }
-      // })
       return post.save()
     })
     .then(() => res.sendStatus(204))
