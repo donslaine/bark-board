@@ -3,7 +3,7 @@ import CreatePost from '../../components/CreatePost/CreatePost'
 import { index, removePost } from '../../utilities/posts-api'
 import Post from '../../components/Post/Post'
 
-export default function GlobalPage({ postList }) {
+export default function GlobalPage({ setPostList }) {
 
     const [showForm, setShowForm] = useState(false)
 
@@ -41,7 +41,12 @@ export default function GlobalPage({ postList }) {
                 className ='btn btn-info my-2'
                 onClick={toggleFormVisiblity}
                 >Create New Bark</button>
-            {showForm && <CreatePost toggleFormVisiblity={toggleFormVisiblity} />}
+            {showForm && 
+                <CreatePost 
+                    toggleFormVisiblity={toggleFormVisiblity} 
+                    setPostArr={setPostArr}
+                />
+            }
             {postMap}
         </div>
     )
