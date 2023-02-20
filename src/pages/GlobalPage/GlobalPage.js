@@ -4,6 +4,13 @@ import { index, removePost } from '../../utilities/posts-api'
 import Post from '../../components/Post/Post'
 
 export default function GlobalPage({ postList }) {
+
+    const [showForm, setShowForm] = useState(false)
+
+    function toggleFormVisiblity() {
+        setShowForm(!showForm)
+    }
+
     const [postArr, setPostArr] = useState([])
 
     useEffect(() => {
@@ -29,8 +36,9 @@ export default function GlobalPage({ postList }) {
     
     return (
         <div className='container-sm'>
-            <h2>Discover</h2>
-            <CreatePost />
+            <h1 className='my-2'>Discover</h1>
+            <button className ='btn btn-info my-2'onClick={toggleFormVisiblity}>Create New Bark</button>
+           {showForm && <CreatePost toggleFormVisiblity={toggleFormVisiblity} />}
             {postMap}
         </div>
     )

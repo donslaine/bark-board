@@ -1,9 +1,10 @@
+import './Comment.css'
 import CommentBody from "./CommentBody"
-
 
 export default function ShowComment({ postComment, handleDeleteComment }) {
     let commentArr = postComment.map((comment, index) => (
         <CommentBody 
+            className='CommentBody'
             key={index} 
             text={comment.text} 
             handleDeleteComment={handleDeleteComment}
@@ -11,10 +12,8 @@ export default function ShowComment({ postComment, handleDeleteComment }) {
         /> 
     ))
 
-
-
     return(
-        <div>
+        <div className="container-sm">
             <p>{commentArr}</p>
         </div>
     )

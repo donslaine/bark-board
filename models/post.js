@@ -16,10 +16,7 @@ const postSchema = new Schema(
             type: String,
             required: false
         },
-        // sortOrder: {
-        //     type: Date,
-        //     required: true
-        // },
+        sortOrder: Date,
         pet: {
             type: String,
             required: true

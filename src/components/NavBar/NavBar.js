@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import * as userService from '../../utilities/users-service'
+
 import Pawprint from "../../Images/pawprint.png"
 import "./NavBar.css"
 
 export default function NavBar({ user, setUser }) {
 
     function handleLogOut() {
-        // we should delegate the actual logging out to the users service
         userService.logOut()
         setUser(null)
     }
@@ -22,7 +22,8 @@ export default function NavBar({ user, setUser }) {
             <Link className= "nav-link text-white" to="/posts">Discover</Link>
             <Link className= "nav-link text-white" to="/profile">MyBoard</Link>
             </div>
-         <Link className= "nav-link text-white justify-content-end" id="" to='' onClick={handleLogOut}>Log Out</Link>
+         <Link className= "nav-link text-white justify-content-end" to='' onClick={handleLogOut}>Log Out</Link>
+
         </nav>
         <span className='mt-3'>Hello there, { user.name }</span>
         </>
