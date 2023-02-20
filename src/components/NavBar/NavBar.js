@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import * as userService from '../../utilities/users-service'
-import './NavBar.css'
+
+import Pawprint from "../../Images/pawprint.png"
+import "./NavBar.css"
 
 export default function NavBar({ user, setUser }) {
 
@@ -10,13 +12,18 @@ export default function NavBar({ user, setUser }) {
     }
     return (
         <>
-        <nav className=' nav navbar navbar-dark bg-dark d-flex'>
-            <div className='justify-content-start d-flex'>
-            <Link className= "nav-link text-white" to="/posts">Discover</Link>
-            <Link className= "nav-link text-white" to="/profile">Profile</Link>
+        <nav className='nav navbar d-flex'>
+            <div className="logo justify-content-start">
+                {/* <img src={Pawprint} alt="pawprint"/> */}
+                <div className= "nav-link text-white" id="logo-name">BarkBoard</div>
+                <img src={Pawprint} alt="pawprint"/>
             </div>
-            <div className= "nav-link text-white title">BarkBoard</div>
+            <div className='d-flex'>
+            <Link className= "nav-link text-white" to="/posts">Discover</Link>
+            <Link className= "nav-link text-white" to="/profile">MyBoard</Link>
+            </div>
          <Link className= "nav-link text-white justify-content-end" to='' onClick={handleLogOut}>Log Out</Link>
+
         </nav>
         <span className='mt-3'>Hello there, { user.name }</span>
         </>
