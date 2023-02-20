@@ -38,7 +38,7 @@ export default function GlobalPage({ postList }) {
         <div className='container-sm'>
             <h2>Discover</h2>
             <button onClick={toggleFormVisiblity}>CreatePost</button>
-           {showForm && <CreatePost />}
+           {showForm && <CreatePost toggleFormVisiblity={toggleFormVisiblity} />}
             {postMap}
         </div>
     )

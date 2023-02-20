@@ -47,19 +47,22 @@ export default function Post({ post, deletePost }) {
                         className='btn btn-primary mx-2 my-2'
                     >Update</button>
                 </Link>
-
-                <div>
-                    <label>Create Comment</label>
+                <form>
+                <div className='form-floating'>
                     <input
+                    className='form-control'
                         type="text"
                         name="text"
                         onChange={onCommentChange}
                     />
-                    <button
-                        type="submit"
-                        onClick={onSubmit}
-                    >Create</button>
+                    <label className='form-label'>Create Comment</label>
                 </div>
+                <button
+                className='btn btn-success'
+                    type="submit"
+                    onClick={onSubmit}
+                >Create</button>
+            </form>
             </div>
             <ShowComment
                 postComment={post.comments}
