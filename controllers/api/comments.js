@@ -2,7 +2,7 @@ const Post = require("../../models/post")
 
 function createComment(req, res, next) {
   const comment = req.body
-  // comment.owner = req.user._id
+  comment.owner = req.user._id
   const postId = req.body.postId
   Post.findById(postId)
     .then((post) =>{

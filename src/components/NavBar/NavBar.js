@@ -22,7 +22,10 @@ export default function NavBar({ user, setUser }) {
             <Link className= "nav-link text-white" to="/posts">Discover</Link>
             <Link className= "nav-link text-white" to="/profile">MyBoard</Link>
             </div>
-         <Link className= "nav-link text-white justify-content-end" to='' onClick={handleLogOut}>Log Out</Link>
+         <Link 
+            className= "nav-link text-white justify-content-end" to='' 
+            onClick={handleLogOut}
+        >Log Out</Link>
 
         </nav>
         <span className='mt-3'>Hello there, { user.name }</span>
