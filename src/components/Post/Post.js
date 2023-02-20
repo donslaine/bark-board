@@ -61,6 +61,8 @@ export default function Post({ post, deletePost }) {
                 <Link to={`/posts/${post._id}`} >
                     <button
                         className='btn btn-primary mx-2 my-2 btn-sm'
+                        data-bs-toggle="modal"
+                        data-bs-target="#update-modal"
                     >Update</button>
                 </Link>
                 <button className ='btn btn-info mx-2 my-2' onClick ={toggleCommentsVisible}>Show Comments</button>
