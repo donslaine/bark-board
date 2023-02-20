@@ -14,11 +14,11 @@ function createPost(req, res, next) {
 function deletePost(req, res, next) {
     Post.findById(req.params.id)
         .then(post => {
-            if (post.owner.equals(req.user._id)) {
+            // if (post.owner.equals(req.user._id)) {
                 return post.deleteOne()
-            } else {
-                res.sendStatus(401)
-            }   
+        //     } else {
+        //         res.sendStatus(401)
+        //     }   
         })
         .then(() => res.sendStatus(204))
         .catch(next)
@@ -48,9 +48,29 @@ function updatePost (req, res, next) {
         .catch(next)
 }
 
+function userDeleteComment(req, res, next) {
+    const comment = req.body.comments
+    comment.owner = req.user._id
+    const commentId = req.params.commentId
+    const postId = req.body.comments.postId
+    Post.findById(postId)
+      .then(post => {
+        post.comments.id(commentId).remove()
+        // post.comments.forEach(index => {
+        //   if (index.id === commentId) {
+        //     index.remove()
+        //   }
+        // })
+        return post.save()
+      })
+      .then(() => res.sendStatus(204))
+      .catch(next)
+  }
+
 module.exports = { 
     createPost,
     deletePost,
     indexPost,
-    updatePost
+    updatePost,
+    userDeleteComment
  }

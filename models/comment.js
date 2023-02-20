@@ -7,11 +7,11 @@ const commentSchema = new Schema(
             type: String,
             required: true
         },
-        // owner: {
-        //     type: Schema.Types.ObjectId,
-		// 	ref: 'User',
-		// 	required: true,
-        // },
+        owner: {
+            type: Schema.Types.ObjectId,
+			ref: 'User',
+			required: false,
+        },
         // postedOn: {
         //     type: Schema.Types.ObjectId,
 		// 	ref: 'Post',

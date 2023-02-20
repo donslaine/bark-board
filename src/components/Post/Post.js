@@ -3,10 +3,10 @@ import { useState } from 'react'
 import ShowComment from '../ShowComment/ShowComment'
 import {createComment} from "../../utilities/comments-api.js"
 export default function Post ({ post, deletePost }) {
-
     const[comment, setComment] = useState({
-        text: "",
-        postId: `${post._id}`
+        postId: `${post._id}`,
+        text: ""
+        
     })
 
     function onCommentChange(event) {
@@ -20,12 +20,13 @@ export default function Post ({ post, deletePost }) {
         event.preventDefault()
         try {
             const formData = {...comment}
-            console.log(formData)
+            // console.log(formData)
             await createComment(formData)
         } catch(error) {
             console.error(error)
         }
     }
+
 
     return (
         <>
