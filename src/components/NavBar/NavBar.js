@@ -31,7 +31,7 @@ export default function NavBar({ user, setUser }) {
                 <div className='menuLink collaspe navbar-collaspe' id='bs-example-navbar-collaspe-1'>
                     <ul class='nav navbar-nav'>
                         <li><a><Link className= 'nav-link text-white' to='/posts'>Discover</Link></a></li>
-                        <li><a><Link className= 'nav-link text-white' to='/profile'>MyBoard</Link></a></li>
+                        <li><a><Link className= 'nav-link text-white' to={`/myboard/${user._id}`}>MyBoard</Link></a></li>
                         <li><a><Link className= 'nav-link text-white' to='' onClick={handleLogOut}>Log Out</Link></a></li>
                     </ul>
                 </div> :

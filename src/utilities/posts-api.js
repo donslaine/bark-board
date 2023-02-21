@@ -34,8 +34,6 @@ export function removePost(id) {
 }
 
 export function update(data, id) {
-    // console.log(data)
-    // console.log(id)
     const token = getToken()
     return fetch(`/api/posts/${id}`, {
         method: 'PATCH',
@@ -45,5 +43,16 @@ export function update(data, id) {
             "Authorization": `Bearer ${token}`
         },
         body: JSON.stringify(data)
+    })
+}
+
+export function indexMyBoard(userId){
+    console.log(userId)
+    const token = getToken()
+    return fetch(`/api/myboard/${userId}`, {
+        method:"GET",
+        headers: {
+            "Authorization": `Bearer ${token}`
+        }
     })
 }
