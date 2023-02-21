@@ -7,6 +7,7 @@ import UpdatePost from '../../components/UpdatePost/UpdatePost'
 import NavBar from '../../components/NavBar/NavBar'
 import './App.css';
 import { index } from '../../utilities/posts-api'
+import MyBoardPage from '../MyBoardPage/MyBoardPage'
 
 function App() {
   const [user, setUser] = useState(getUser())
@@ -28,6 +29,7 @@ function App() {
             <Route path='/' element={<GlobalPage />} />
             <Route path='/posts' element={<GlobalPage />} />
             <Route path='/posts/:postId' element={<UpdatePost postList={postList} />} />
+            <Route path='/myboard/:userId' element={<MyBoardPage user={user}/>}/>
           </Routes>
         </>
         ) : (

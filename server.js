@@ -28,6 +28,7 @@ app.use(require('./config/checkToken'))
 app.use('/api/users', require('./routes/api/users'))
 app.use('/api/users/login', require('./routes/api/users'))
 app.use('/api/posts', require('./routes/api/posts'))
+app.use('/api/myboard', require('./routes/api/posts'))
 app.use("/api/posts/index", require("./routes/api/posts"))
 app.use("/api/comments", require("./routes/api/comments"))
 
