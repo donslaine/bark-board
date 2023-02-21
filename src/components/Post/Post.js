@@ -129,15 +129,15 @@ export default function Post({ post, deletePost, setPostArr, user }) {
                 <hr/>
                 <p>{post.category}</p>
                 <hr/>
-                <div className='error-box'>
-                    <p>{error}</p>
-                </div>
+               
                 {/* <button className='btn btn-danger mx-2 my-2 btn-sm' onClick={() => deletePost(post._id)}>Delete</button>
+
                 <Link to={`/posts/${post._id}`} >
                     <button
                         className='btn btn-primary mx-2 my-2 btn-sm'
                         data-bs-toggle="modal"
                         data-bs-target="#update-modal"
+
                     >Update</button>
                 </Link> */}
                 <button className ='btn btn-info mx-2 my-2' onClick ={toggleCommentsVisible}>Show Comments</button>
@@ -155,7 +155,7 @@ export default function Post({ post, deletePost, setPostArr, user }) {
                     className='btn btn-success btn-sm comment-button'
                         type="submit"
                         onClick={onSubmit}
-                    >Create</button>
+                    ><i class="bi bi-plus-square"></i></button>
                 </form>
             </div>
 
