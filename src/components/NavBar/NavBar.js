@@ -20,7 +20,7 @@ export default function NavBar({ user, setUser }) {
                 <img src={Pawprint} alt='pawprint'/>
             </div>
             <div className='menu-container justify-content-end'>
-                <div className='navbar-header'>
+                <div className='navbar-menu'>
                 <button type='button' className='navbar-toggle collapsed' data-toggle='collapse' data-target='#bs-example-navbar-collapse-1' onClick={() => setNavMenu((prevState) => !prevState)}>
                     <i className='bi bi-list'></i>
                 </button>

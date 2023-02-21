@@ -7,14 +7,24 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.menu-container {
+    margin-right: 30px;
+    border-radius: 10px
+}
+
+.nav li a {
+    display: inline;
+    color: white;
+}
+
 .logo {
     display: flex;
 }
 
 .logo img {
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     right: 10px;
     background: #FB8500;
 }
@@ -22,8 +32,4 @@
 .logo #logo-name {
     font-size: 25px;
     font-family: 'Righteous', cursive;
-}
-
-.menuLink {
-    transition: transform 0.25s ease-out;
 }

@@ -6,6 +6,6 @@ console.log(posts)
 
 
     return (
-    <h2>myboard</h2>
+    <h2>MyBoard</h2>
     )
 }
