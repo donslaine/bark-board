@@ -69,15 +69,16 @@ export default function Post({ post, deletePost, setPostArr }) {
                 <hr/>
                 <p>{post.category}</p>
                 <hr/>
-                <button className='btn btn-danger mx-2 my-2 btn-sm' onClick={() => deletePost(post._id)}>Delete</button>
+                <button className='btn btn-danger mx-2 my-2 btn-sm' onClick={() => deletePost(post._id)}><i class="bi bi-trash"></i></button>
                 <Link to={`/posts/${post._id}`} >
                     <button
                         className='btn btn-primary mx-2 my-2 btn-sm'
                         data-bs-toggle="modal"
                         data-bs-target="#update-modal"
-                    >Update</button>
+                    >Update <i class="bi bi-tools"></i>
+                    </button>
                 </Link>
-                <button className ='btn btn-info mx-2 my-2' onClick ={toggleCommentsVisible}>Show Comments</button>
+                <button className ='btn btn-info btn-sm mx-2 my-2' onClick ={toggleCommentsVisible}>Comments <i class="bi bi-search"></i></button>
                 <form>
                     <div className='form-floating comment-text'>
                         <input
@@ -92,7 +93,7 @@ export default function Post({ post, deletePost, setPostArr }) {
                     className='btn btn-success btn-sm comment-button'
                         type="submit"
                         onClick={onSubmit}
-                    >Create</button>
+                    ><i class="bi bi-plus-square"></i></button>
                 </form>
             </div>
 
