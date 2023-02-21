@@ -16,17 +16,16 @@ function createComment(req, res, next) {
 }
 
 function deleteComment(req, res, next) {
-  // const comment = req.body
   const commentId = req.params.commentId
   const postId = req.body.comments.postId
   Post.findById(postId)
     .then(post => {
       post.comments.forEach(comment => {
         if (comment.owner.equals(req.user._id) || post.owner.equals(req.user._id)) {
-        post.comments.id(commentId).remove()
-      } else {
-        res.sendStatus(401)
-      }
+          post.comments.id(commentId).remove()
+        } else {
+          res.sendStatus(401)
+        }
       })
       return post.save()
     })

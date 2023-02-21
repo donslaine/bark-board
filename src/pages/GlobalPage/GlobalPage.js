@@ -41,7 +41,7 @@ export default function GlobalPage({ user }) {
             <button 
                 className ='btn btn-info my-2'
                 onClick={toggleFormVisiblity}
-                >Create New Bark <i class="fa-solid fa-paw"></i></button>
+                >Create New Bark <i className="fa-solid fa-paw"></i></button>
             {showForm && 
                 <CreatePost 
                     toggleFormVisiblity={toggleFormVisiblity} 
