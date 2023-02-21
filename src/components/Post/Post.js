@@ -50,14 +50,14 @@ export default function Post({ post, deletePost, setPostArr, user }) {
         }
     }
 
-    function handlePermissionsError() {
-        setError('You do not have permission to edit this')
-    }
+    // function handlePermissionsError() {
+    //     setError('You do not have permission to edit this')
+    // }
 
     function handleDeleteComment(event) {
         const deleteReq = { comments: { postId: post._id } }
+        // console.log(event.target.id)
         deleteComment(deleteReq, event.target.id)
-            .then(console.log)
             .then(() => {
                 return index()
             })
@@ -84,15 +84,15 @@ export default function Post({ post, deletePost, setPostArr, user }) {
                     <div className='error-box'>
                         <p>{error}</p>
                     </div>
-                    <button className='btn btn-danger mx-2 my-2 btn-sm' onClick={() => deletePost(post._id)}>Delete</button>
+                    <button className='btn btn-danger mx-2 my-2 btn-sm' onClick={() => deletePost(post._id)}><i class="bi bi-trash"></i></button>
                     <Link to={`/posts/${post._id}`} >
                         <button
                             className='btn btn-primary mx-2 my-2 btn-sm'
                             data-bs-toggle="modal"
                             data-bs-target="#update-modal"
-                        >Update</button>
+                        >Update <i className="bi bi-tools"></i></button>
                     </Link>
-                    <button className ='btn btn-info mx-2 my-2' onClick ={toggleCommentsVisible}>Show Comments</button>
+                    <button className ='btn btn-info mx-2 my-2 btn-sm' onClick ={toggleCommentsVisible}>Comments <i class="bi bi-search"></i></button>
                     <form>
                         <div className='form-floating comment-text'>
                             <input
@@ -107,7 +107,7 @@ export default function Post({ post, deletePost, setPostArr, user }) {
                         className='btn btn-success btn-sm comment-button'
                             type="submit"
                             onClick={onSubmit}
-                        >Create</button>
+                        ><i className="bi bi-plus-square"></i></button>
                     </form>
                 </div>
 
@@ -140,7 +140,7 @@ export default function Post({ post, deletePost, setPostArr, user }) {
 
                     >Update</button>
                 </Link> */}
-                <button className ='btn btn-info mx-2 my-2' onClick ={toggleCommentsVisible}>Show Comments</button>
+                <button className ='btn btn-info mx-2 my-2 btn-sm' onClick ={toggleCommentsVisible}>Comments <i class="bi bi-search"></i></button>
                 <form>
                     <div className='form-floating comment-text'>
                         <input
@@ -155,7 +155,7 @@ export default function Post({ post, deletePost, setPostArr, user }) {
                     className='btn btn-success btn-sm comment-button'
                         type="submit"
                         onClick={onSubmit}
-                    ><i class="bi bi-plus-square"></i></button>
+                    ><i className="bi bi-plus-square"></i></button>
                 </form>
             </div>
 
