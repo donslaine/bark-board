@@ -23,3 +23,7 @@
     font-size: 25px;
     font-family: 'Righteous', cursive;
 }
+
+.menuLink {
+    transition: transform 0.25s ease-out;
+}
