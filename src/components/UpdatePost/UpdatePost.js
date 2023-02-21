@@ -5,21 +5,17 @@ import {Link} from 'react-router-dom'
 import './UpdatePost.css'
 
 export default function UpdatePost({ post, postList }) {
-    let {postId} = useParams()
-    let singlePostId = postList.find((p) => p._id === postId)
-    console.log(singlePostId)
+    let { postId } = useParams()
 
-   
-   
+    let singlePostId = postList.find((p) => p._id === postId)
+
     const [updatePost, setUpdatePost] = useState({
         title: `${singlePostId.title}`,
         pet: `${singlePostId.pet}`,
         text: `${singlePostId.text}`,
         category: `${singlePostId.category}`,
     }) 
-   
-
-
+    
     function handleChange(event) {
         setUpdatePost({...updatePost, 
         [event.target.name]: event.target.value

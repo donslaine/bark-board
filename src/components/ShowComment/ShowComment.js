@@ -9,12 +9,15 @@ export default function ShowComment({ postComment, handleDeleteComment }) {
             text={comment.text} 
             handleDeleteComment={handleDeleteComment}
             id={comment._id}
+            comment={comment}
         /> 
     ))
 
     return(
         <div className="container-sm">
+
             <>{commentArr}</>
+
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+
 import { Link } from 'react-router-dom'
 import { indexMyBoard } from "../../utilities/posts-api";
 import { createComment, deleteComment } from "../../utilities/comments-api.js"
@@ -51,8 +52,6 @@ export default function MyBoard({ post, setShowBoard, deletePost }){
     .then((res)=> res.json())
     .then((resData) => setShowBoard(resData.posts))
 }
-
-
   return (
     <>
     <div className='container border rounded-2 shadow-sm mt-3 mb-3 Post'>

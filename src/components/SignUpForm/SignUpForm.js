@@ -46,7 +46,7 @@ export default class SignUpForm extends Component {
         return(
             <div className="container-sm border rounded-2 shadow-sm mb-4">
                 <form autoComplete="off" onSubmit={this.handleSubmit}>
-                    <label>Name</label>
+                    <label>Username</label>
                     <input
                     className='form-control'
                         type='text'

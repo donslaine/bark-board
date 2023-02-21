@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react'
 import CreatePost from '../../components/CreatePost/CreatePost'
 import { index, removePost } from '../../utilities/posts-api'
 import Post from '../../components/Post/Post'
+import './GlobalPage.css'
 
-export default function GlobalPage() {
+export default function GlobalPage({ user }) {
 
     const [showForm, setShowForm] = useState(false)
 
@@ -31,7 +32,7 @@ export default function GlobalPage() {
 
     // this maps each post component out with the post data from state
     const postMap = postArr.map((post, index) => (
-        <Post post={post} key={index} deletePost={deletePost} />
+        <Post post={post} key={index} deletePost={deletePost} setPostArr= {setPostArr} user={user}/>
     ))
     
     return (
@@ -40,7 +41,7 @@ export default function GlobalPage() {
             <button 
                 className ='btn btn-info my-2'
                 onClick={toggleFormVisiblity}
-                >Create New Bark</button>
+                >Create New Bark <i className="fa-solid fa-paw"></i></button>
             {showForm && 
                 <CreatePost 
                     toggleFormVisiblity={toggleFormVisiblity} 
