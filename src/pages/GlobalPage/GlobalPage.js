@@ -31,7 +31,7 @@ export default function GlobalPage() {
 
     // this maps each post component out with the post data from state
     const postMap = postArr.map((post, index) => (
-        <Post post={post} key={index} deletePost={deletePost} />
+        <Post post={post} key={index} deletePost={deletePost} setPostArr= {setPostArr} />
     ))
     
     return (
