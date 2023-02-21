@@ -34,8 +34,6 @@ export function removePost(id) {
 }
 
 export function update(data, id) {
-    // console.log(data)
-    // console.log(id)
     const token = getToken()
     return fetch(`/api/posts/${id}`, {
         method: 'PATCH',

@@ -25,8 +25,8 @@ function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path='/' element={<GlobalPage />} />
-            <Route path='/posts' element={<GlobalPage />} />
+            <Route path='/' element={<GlobalPage user={user} />} />
+            <Route path='/posts' element={<GlobalPage user={user} />} />
             <Route path='/posts/:postId' element={<UpdatePost postList={postList} />} />
           </Routes>
         </>
