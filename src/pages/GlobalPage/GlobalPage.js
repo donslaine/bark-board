@@ -4,7 +4,7 @@ import { index, removePost } from '../../utilities/posts-api'
 import Post from '../../components/Post/Post'
 import './GlobalPage.css'
 
-export default function GlobalPage() {
+export default function GlobalPage({ user }) {
 
     const [showForm, setShowForm] = useState(false)
 
@@ -32,7 +32,7 @@ export default function GlobalPage() {
 
     // this maps each post component out with the post data from state
     const postMap = postArr.map((post, index) => (
-        <Post post={post} key={index} deletePost={deletePost} setPostArr= {setPostArr} />
+        <Post post={post} key={index} deletePost={deletePost} setPostArr= {setPostArr} user={user}/>
     ))
     
     return (
