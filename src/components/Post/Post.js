@@ -2,10 +2,11 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import ShowComment from '../ShowComment/ShowComment'
 import { createComment, deleteComment } from "../../utilities/comments-api.js"
+import {index} from '../../utilities/posts-api'
 import './Post.css'
 
 
-export default function Post({ post, deletePost }) {
+export default function Post({ post, deletePost, setPostArr }) {
 
     const [commentsVisible, setCommentsVisible] = useState(false)
 
@@ -31,6 +32,12 @@ export default function Post({ post, deletePost }) {
         try {
             const formData = { ...comment }
             await createComment(formData)
+            .then(() => {
+                return index()
+            })
+            .then((res)=> res.json())
+            .then((resData) => setPostArr(resData.posts))
+
             if (!commentsVisible) {
                 toggleCommentsVisible()
             }
@@ -42,6 +49,11 @@ export default function Post({ post, deletePost }) {
     function handleDeleteComment(event) {
         const deleteReq = { comments: { postId: post._id } }
         deleteComment(deleteReq, event.target.id)
+        .then(() => {
+            return index()
+        })
+        .then((res)=> res.json())
+        .then((resData) => setPostArr(resData.posts))
     }
 
     return (
