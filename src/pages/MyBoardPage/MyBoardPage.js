@@ -3,23 +3,18 @@ import { useEffect, useState } from "react";
 import { indexMyBoard } from "../../utilities/posts-api";
 import { useParams } from 'react-router-dom'
 import { removePost } from "../../utilities/posts-api";
-import CreatePost from "../../components/CreatePost/CreatePost";
-import Post from "../../components/Post/Post";
-
 
 export default function MyBoardPage () {
 
-    let {userId} = useParams()
+    const { userId } = useParams()
     
         const [showBoard, setShowBoard] = useState([])
-        // let sortedPost = showBoard 
+        
         useEffect(() => {
             indexMyBoard(userId)
                 .then((res)=> res.json())
-                .then((resData) => setShowBoard(resData.posts)) 
-                .then(console.log(showBoard))
-        },[])
-    
+                .then((resData) => setShowBoard(resData.posts))
+        }, [])
     
         function deletePost(id) {
             removePost(id) 
@@ -30,24 +25,24 @@ export default function MyBoardPage () {
                 .then((resData) => setShowBoard(resData.posts))  
         }
     
-
-    
-    
-    
-        if (showBoard === undefined){
+        if (showBoard === undefined) {
             return <h1>Loading...</h1>
         }
-        
-           const postMap = showBoard.map((post, index) => (
-            <MyBoard post={post} key={index} deletePost ={deletePost} indexMyBoard ={indexMyBoard}  setShowBoard={setShowBoard}/>
+        const postMap = showBoard.map((post, index) => (
+            <MyBoard 
+                post={post} 
+                key={index} 
+                deletePost ={deletePost} 
+                indexMyBoard ={indexMyBoard}  
+                setShowBoard={setShowBoard}
+            />
         ))
     
         
         return (
             <div className='container-sm'>
-            <h1 className='my-2'>My Board</h1>
-
-            {postMap}
-        </div>
+                <h1 className='my-2'>My Board</h1>
+                {postMap}
+            </div>
         )
      }

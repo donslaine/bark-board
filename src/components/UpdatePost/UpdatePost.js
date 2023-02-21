@@ -57,7 +57,6 @@ export default function UpdatePost({ post, postList }) {
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
