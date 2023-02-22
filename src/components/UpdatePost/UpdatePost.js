@@ -3,6 +3,7 @@ import { update } from '../../utilities/posts-api'
 import { useParams } from 'react-router-dom'
 import {Link} from 'react-router-dom'
 import './UpdatePost.css'
+import Modal from 'react-bootstrap/Modal'
 
 export default function UpdatePost({ post, postList }) {
     let { postId } = useParams()
@@ -33,14 +34,11 @@ export default function UpdatePost({ post, postList }) {
     }
 
     return (
-        <div class="modal fade" id="update-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modal-title">Update</h5>
-                        <Link className="UpdatePost" to="/posts" ><button type="button" class="btn-close"  data-bs-dismiss="modal" aria-label="Close"></button></Link>
+        <>
+                    <div>
+                        
                     </div>
-                    <div class="modal-body">
+                    <div className="modal-body">
                         <form className='update-form'>
                             <label className='title'>Title</label>
                             <input className='title-update' type='text' name='title' defaultValue= {singlePostId.title} onChange={handleChange} />
@@ -52,11 +50,23 @@ export default function UpdatePost({ post, postList }) {
                             <input className='category-update' type='text' name='category' defaultValue= {singlePostId.category} onChange={handleChange} />
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary" data-bs-dismiss="modal" aria-label="Close" type="submit" onClick={handleSubmit}><Link className="UpdatePost" to="/posts" >Update Post</Link></button>
+                    <div>
+                        <button className="btn btn-primary" type="submit" onClick={handleSubmit}><Link class="updateLink" to="/posts" >Update Post</Link></button>
+                        <button type="button" className="btn btn-danger"  data-bs-dismiss="modal" aria-label="Close"><Link  class="updateLink" to="/posts" >Cancel</Link></button>
                     </div>
-                </div>
-            </div>
-        </div>
+
+            {/* <Modal.Body>
+                <form className='update-form'>
+                    <label className='title'>Title</label>
+                    <input className='title-update' type='text' name='title' defaultValue= {singlePostId.title} onChange={handleChange} />
+                    <label className='pet'>Pet</label>
+                    <input className='pet-update' type='text' name='pet' defaultValue= {singlePostId.pet} onChange={handleChange} />
+                    <label className='text'>Text</label>
+                    <input className='text-update' type='text' name='text' defaultValue= {singlePostId.text} onChange={handleChange} />
+                    <label className='category'>Category</label>
+                    <input className='category-update' type='text' name='category' defaultValue= {singlePostId.category} onChange={handleChange} />
+                </form>
+            </Modal.Body> */}
+    </>
     )
 }

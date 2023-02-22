@@ -22,3 +22,8 @@
 .category { grid-area: 4 / 1 / 5 / 2; }
 
 .category-update { grid-area: 4 / 2 / 5 / 6; }
+
+.updateLink {
+    text-decoration: none;
+    color: #fff;
+}

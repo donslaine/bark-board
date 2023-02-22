@@ -4,6 +4,8 @@ import ShowComment from '../ShowComment/ShowComment'
 import { createComment, deleteComment } from "../../utilities/comments-api.js"
 import { index } from '../../utilities/posts-api'
 import './Post.css'
+import Modal from 'react-bootstrap/Modal'
+import ModalTest from '../UpdatePost/ModalTest'
 
 
 export default function Post({ post, deletePost, setPostArr, user }) {
@@ -77,11 +79,7 @@ export default function Post({ post, deletePost, setPostArr, user }) {
                     <hr/>
                     <button className='btn btn-danger mx-2 my-2 btn-sm' onClick={() => deletePost(post._id)}><i className="bi bi-trash"></i></button>
                     <Link to={`/posts/${post._id}`} >
-                        <button
-                            className='btn btn-primary mx-2 my-2 btn-sm'
-                            data-bs-toggle="modal"
-                            data-bs-target="#update-modal"
-                        >Update <i className="bi bi-tools"></i></button>
+                        <ModalTest/>
                     </Link>
                     <button className ='btn btn-info mx-2 my-2 btn-sm' onClick ={toggleCommentsVisible}>Comments <i className="bi bi-search"></i></button>
                     <form>
