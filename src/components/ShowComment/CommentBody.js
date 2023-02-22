@@ -16,5 +16,3 @@ export default function CommentBody({ text, handleDeleteComment, id}) {
         </div>
     )
 }
-
-//

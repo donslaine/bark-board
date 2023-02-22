@@ -12,8 +12,10 @@ export default function GlobalPage({ user }) {
         setShowForm(!showForm)
     }
 
+    // this state stores all posts in the DB
     const [postArr, setPostArr] = useState([])
 
+    // this makes the index call every time the GlobalPage mounts
     useEffect(() => {
         index()
             .then((res)=> res.json())
@@ -41,7 +43,7 @@ export default function GlobalPage({ user }) {
             <button 
                 className ='btn btn-info my-2'
                 onClick={toggleFormVisiblity}
-                >Create New Bark <i className="fa-solid fa-paw"></i></button>
+            >Create New Bark <i className="fa-solid fa-paw"></i></button>
             {showForm && 
                 <CreatePost 
                     toggleFormVisiblity={toggleFormVisiblity} 

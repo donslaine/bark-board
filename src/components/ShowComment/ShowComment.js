@@ -15,9 +15,7 @@ export default function ShowComment({ postComment, handleDeleteComment }) {
 
     return(
         <div className="container-sm">
-
             <>{commentArr}</>
-
         </div>
     )
 }

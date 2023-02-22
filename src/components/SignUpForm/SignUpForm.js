@@ -48,7 +48,7 @@ export default class SignUpForm extends Component {
                 <form autoComplete="off" onSubmit={this.handleSubmit}>
                     <label>Username</label>
                     <input
-                    className='form-control'
+                        className='form-control'
                         type='text'
                         name='name'
                         value={this.state.name}
@@ -57,7 +57,7 @@ export default class SignUpForm extends Component {
                     />
                     <label>Email</label>
                     <input
-                    className='form-control'
+                        className='form-control'
                         type='email'
                         name='email'
                         value={this.state.email}
@@ -66,7 +66,7 @@ export default class SignUpForm extends Component {
                     />
                     <label>Password</label>
                     <input
-                    className='form-control'
+                        className='form-control'
                         type='password'
                         name='password'
                         value={this.state.password}
@@ -75,7 +75,7 @@ export default class SignUpForm extends Component {
                     />
                     <label>Confirm</label>
                     <input
-                    className='form-control'
+                        className='form-control'
                         type='password'
                         name='confirm'
                         value={this.state.confirm}

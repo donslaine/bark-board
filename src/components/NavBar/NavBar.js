@@ -14,6 +14,7 @@ export default function NavBar({ user, setUser }) {
     }
     return (
         <>
+
         <nav className='nav navbar navbar-static-top d-flex' role='navigation'>
             <div className='logo justify-content-start'>
                 <div className= 'nav-link text-white' id='logo-name'>BarkBoard</div>
