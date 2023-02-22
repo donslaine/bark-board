@@ -42,7 +42,7 @@
 
 ## Getting Started
 
-*Live-Link:*    [Bark Board](placeholder)
+*Live-Link:*    [Bark Board](https://bark-board-client.onrender.com/)
 
 *Trello Board:* [Trello Board](https://trello.com/b/3dm9w1kE/bark-board-scrum)
 
