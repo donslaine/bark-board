@@ -40,6 +40,16 @@
 
 ---
 
+## Getting Started
+
+*Live-Link:*    [Bark Board](placeholder)
+
+*Trello Board:* [Trello Board](https://trello.com/b/3dm9w1kE/bark-board-scrum)
+
+*Pitch Deck:*   [Pitch Deck](https://docs.google.com/presentation/d/1vuWaRQB9XFbuDuValHFj2jUcl-Nn37xIAtEep8AkoKA/edit?usp=sharing)
+
+---
+
 ## Next Steps
 
 **Version 2.0** will include the following features:
@@ -57,10 +67,6 @@
 - Ability to report posts and comments
 - Ability to block users
 - Sound effect choices and implementation on button clicks
-
----
-
-*Live Link:* [Bark Board](placeholder)
 
 ---
 
