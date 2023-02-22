@@ -2,7 +2,7 @@ import { getToken } from "./users-service";
 
 export function create(data) {
 	const token = getToken();
-	return fetch("/api/posts/new", {
+	return fetch("https://bark-board-server.onrender.com/api/posts/new", {
 		method: "POST",
 		headers: {
 			Accept: "application/json",
@@ -15,7 +15,7 @@ export function create(data) {
 
 export function index() {
 	const token = getToken();
-	return fetch("/api/posts/index/all", {
+	return fetch("https://bark-board-server.onrender.com/api/posts/index/all", {
 		headers: {
 			Authorization: `Bearer ${token}`,
 		},
@@ -24,7 +24,7 @@ export function index() {
 
 export function removePost(id) {
 	const token = getToken();
-	return fetch(`/api/posts/${id}`, {
+	return fetch(`https://bark-board-server.onrender.com/api/posts/${id}`, {
 		method: "DELETE",
 		headers: {
 			Authorization: `Bearer ${token}`,
@@ -34,7 +34,7 @@ export function removePost(id) {
 
 export function update(data, id) {
 	const token = getToken();
-	return fetch(`/api/posts/${id}`, {
+	return fetch(`https://bark-board-server.onrender.com/api/posts/${id}`, {
 		method: "PATCH",
 		headers: {
 			Accept: "application/json",
@@ -47,7 +47,7 @@ export function update(data, id) {
 
 export function indexMyBoard(userId) {
 	const token = getToken();
-	return fetch(`/api/myboard/${userId}`, {
+	return fetch(`https://bark-board-server.onrender.com/api/myboard/${userId}`, {
 		method: "GET",
 		headers: {
 			Authorization: `Bearer ${token}`,
