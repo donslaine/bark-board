@@ -43,32 +43,23 @@ export default function NavBar({ user, setUser }) {
 				>
 					<ul className="nav navbar-nav">
 						<li>
-							<a>
-								<Link className="nav-link text-white" to="/posts">
-									Discover <i className="bi bi-people"></i>
-								</Link>
-							</a>
+							<Link className="nav-link text-white" to="/posts">
+								Discover <i className="bi bi-people"></i>
+							</Link>
 						</li>
 						<li>
-							<a>
-								<Link
-									className="nav-link text-white"
-									to={`/myboard/${user._id}`}
-								>
-									My Board <i className="bi bi-file-person-fill"></i>
-								</Link>
-							</a>
+							<Link className="nav-link text-white" to={`/myboard/${user._id}`}>
+								My Board <i className="bi bi-file-person-fill"></i>
+							</Link>
 						</li>
 						<li>
-							<a>
-								<Link
-									className="nav-link text-white"
-									to=""
-									onClick={handleLogOut}
-								>
-									Log Out <i className="bi bi-box-arrow-right"></i>
-								</Link>
-							</a>
+							<Link
+								className="nav-link text-white"
+								to=""
+								onClick={handleLogOut}
+							>
+								Log Out <i className="bi bi-box-arrow-right"></i>
+							</Link>
 						</li>
 					</ul>
 				</div>
