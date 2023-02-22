@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { Link } from "react-router-dom";
 import { indexMyBoard } from "../../utilities/posts-api";
@@ -36,7 +36,6 @@ export default function MyBoard({ post, setShowBoard, deletePost }) {
 
 			if (!commentsVisible) {
 				toggleCommentsVisible();
-				console.log("it worked!");
 			}
 		} catch (error) {
 			console.error(error);

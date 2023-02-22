@@ -24,7 +24,7 @@ export default function NavBar({ user, setUser }) {
 					<div className="navbar-menu">
 						<button
 							type="button"
-							class="btn btn-secondary dropdown-toggle"
+							className="btn btn-secondary dropdown-toggle"
 							data-toggle="dropdown"
 							aria-haspopup="true"
 							aria-expanded="false"
