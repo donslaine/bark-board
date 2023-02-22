@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import UpdatePost from './UpdatePost';
-import { Link } from 'react-router-dom';
 
 function UpdatePostModal() {
   const [show, setShow] = useState(false);
@@ -12,8 +11,8 @@ function UpdatePostModal() {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        ModalTest
+      <Button className="btn-sm" variant="primary" onClick={handleShow}>
+        Update
       </Button>
 
       <Modal
