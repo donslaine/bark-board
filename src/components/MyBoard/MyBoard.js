@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import { Link } from "react-router-dom";
 import { indexMyBoard } from "../../utilities/posts-api";
@@ -36,7 +36,6 @@ export default function MyBoard({ post, setShowBoard, deletePost }) {
 
 			if (!commentsVisible) {
 				toggleCommentsVisible();
-				console.log("it worked!");
 			}
 		} catch (error) {
 			console.error(error);
@@ -69,7 +68,7 @@ export default function MyBoard({ post, setShowBoard, deletePost }) {
 					className="btn btn-danger mx-2 my-2 btn-sm"
 					onClick={() => deletePost(post._id)}
 				>
-					<i class="bi bi-trash"></i>
+					<i className="bi bi-trash"></i>
 				</button>
 				<Link to={`/posts/${post._id}`}>
 					<button
@@ -77,14 +76,14 @@ export default function MyBoard({ post, setShowBoard, deletePost }) {
 						data-bs-toggle="modal"
 						data-bs-target="#update-modal"
 					>
-						Update <i class="bi bi-tools"></i>
+						Update <i className="bi bi-tools"></i>
 					</button>
 				</Link>
 				<button
 					className="btn btn-info btn-sm mx-2 my-2"
 					onClick={toggleCommentsVisible}
 				>
-					Comments <i class="bi bi-search"></i>
+					Comments <i className="bi bi-search"></i>
 				</button>
 				<form>
 					<div className="form-floating comment-text">
@@ -101,7 +100,7 @@ export default function MyBoard({ post, setShowBoard, deletePost }) {
 						type="submit"
 						onClick={onSubmit}
 					>
-						<i class="bi bi-plus-square"></i>
+						<i className="bi bi-plus-square"></i>
 					</button>
 				</form>
 			</div>

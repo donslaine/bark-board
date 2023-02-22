@@ -13,7 +13,6 @@ export default class SignUpForm extends Component {
 
 	handleChange = (event) => {
 		this.setState({
-			// name, email, password, confirm
 			[event.target.name]: event.target.value,
 			error: "",
 		});
@@ -21,7 +20,6 @@ export default class SignUpForm extends Component {
 
 	handleSubmit = async (event) => {
 		event.preventDefault();
-		// alert(JSON.stringify(this.state))
 		try {
 			// taking the state, copying it and asigning it to formData
 			const formData = { ...this.state };
@@ -30,7 +28,6 @@ export default class SignUpForm extends Component {
 
 			// wait for a response back from the user
 			const user = await signUp(formData);
-			// just for right now
 			this.props.setUser(user);
 		} catch (error) {
 			console.error(error);
