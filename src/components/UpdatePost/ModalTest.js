@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import
+import UpdatePost from './UpdatePost';
+import { Link } from 'react-router-dom';
 
-function UpdatePost() {
+function UpdatePostModal() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -12,7 +13,7 @@ function UpdatePost() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal
+        ModalTest
       </Button>
 
       <Modal
@@ -21,12 +22,12 @@ function UpdatePost() {
         backdrop="static"
         keyboard={false}
       >
-        <Modal.Header closeButton>
+        <Modal.Header>
           <Modal.Title>Update</Modal.Title>
+          <h5>Update Post</h5>
         </Modal.Header>
         <Modal.Body>
-          I will not close if you click outside me. Don't even try to press
-          escape key.
+          <UpdatePost/>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
@@ -39,4 +40,4 @@ function UpdatePost() {
   );
 }
 
-export default UpdatePost;
+export default UpdatePostModal;
