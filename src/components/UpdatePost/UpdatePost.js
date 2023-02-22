@@ -54,6 +54,7 @@ export default function UpdatePost({ post, postList }) {
                         <button className="btn btn-primary" type="submit" onClick={handleSubmit}><Link class="updateLink" to="/posts" >Update Post</Link></button>
                         <button type="button" className="btn btn-danger"  data-bs-dismiss="modal" aria-label="Close"><Link  class="updateLink" to="/posts" >Cancel</Link></button>
                     </div>
+
             {/* <Modal.Body>
                 <form className='update-form'>
                     <label className='title'>Title</label>

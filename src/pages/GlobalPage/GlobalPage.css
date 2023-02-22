@@ -24,3 +24,10 @@
         transform: rotate(0deg) translate3d(0,0,0);
     }
 }
+main{
+    background-image: url("../../Images/pawprints_720.png");
+    background-attachment: fixed;
+}
+.container{
+    background-color: aliceblue;
+}

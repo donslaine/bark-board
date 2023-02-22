@@ -14,8 +14,6 @@ export default function Post({ post, deletePost, setPostArr, user }) {
 
     const [isPostOwned, setIsPostOwned] = useState(post.owner._id === user._id ? true : false)
 
-    const [error, setError] = useState('')
-
     function toggleCommentsVisible () {
         setCommentsVisible(!commentsVisible)
     }
@@ -52,10 +50,6 @@ export default function Post({ post, deletePost, setPostArr, user }) {
         }
     }
 
-    // function handlePermissionsError() {
-    //     setError('You do not have permission to edit this')
-    // }
-
     function handleDeleteComment(event) {
         const deleteReq = { comments: { postId: post._id } }
         // console.log(event.target.id)
@@ -83,14 +77,11 @@ export default function Post({ post, deletePost, setPostArr, user }) {
                     <hr/>
                     <p>{post.category}</p>
                     <hr/>
-                    <div className='error-box'>
-                        <p>{error}</p>
-                    </div>
-                    <button className='btn btn-danger mx-2 my-2 btn-sm' onClick={() => deletePost(post._id)}><i class="bi bi-trash"></i></button>
+                    <button className='btn btn-danger mx-2 my-2 btn-sm' onClick={() => deletePost(post._id)}><i className="bi bi-trash"></i></button>
                     <Link to={`/posts/${post._id}`} >
                         <ModalTest/>
                     </Link>
-                    <button className ='btn btn-info mx-2 my-2 btn-sm' onClick ={toggleCommentsVisible}>Comments <i class="bi bi-search"></i></button>
+                    <button className ='btn btn-info mx-2 my-2 btn-sm' onClick ={toggleCommentsVisible}>Comments <i className="bi bi-search"></i></button>
                     <form>
                         <div className='form-floating comment-text'>
                             <input
@@ -115,53 +106,41 @@ export default function Post({ post, deletePost, setPostArr, user }) {
                 />}
             </>
              : 
-             <>
-            <div className='container border rounded-2 shadow-sm mt-3 mb-3 Post'>
-                <h2>{post.owner.name}</h2>
-                <hr/>
-                <div className='title-bar'>
-                    <h3>{post.title}</h3>
-                    <p>{post.pet}</p>
-                </div>
-                <p className='post-body'>{post.text}</p>
-                <hr/>
-                <p>{post.category}</p>
-                <hr/>
-               
-                {/* <button className='btn btn-danger mx-2 my-2 btn-sm' onClick={() => deletePost(post._id)}>Delete</button>
-
-                <Link to={`/posts/${post._id}`} >
-                    <button
-                        className='btn btn-primary mx-2 my-2 btn-sm'
-                        data-bs-toggle="modal"
-                        data-bs-target="#update-modal"
-
-                    >Update</button>
-                </Link> */}
-                <button className ='btn btn-info mx-2 my-2 btn-sm' onClick ={toggleCommentsVisible}>Comments <i class="bi bi-search"></i></button>
-                <form>
-                    <div className='form-floating comment-text'>
-                        <input
-                        className='form-control'
-                            type="text"
-                            name="text"
-                            onChange={onCommentChange}
-                        />
-                        <label className='form-label'>Comment</label>
+            <>
+                <div className='container border rounded-2 shadow-sm mt-3 mb-3 Post'>
+                    <h2>{post.owner.name}</h2>
+                    <hr/>
+                    <div className='title-bar'>
+                        <h3>{post.title}</h3>
+                        <p>{post.pet}</p>
                     </div>
-                    <button
-                    className='btn btn-success btn-sm comment-button'
-                        type="submit"
-                        onClick={onSubmit}
-                    ><i className="bi bi-plus-square"></i></button>
-                </form>
-            </div>
+                    <p className='post-body'>{post.text}</p>
+                    <hr/>
+                    <p>{post.category}</p>
+                    <hr/>
+                    <button className ='btn btn-info mx-2 my-2 btn-sm' onClick ={toggleCommentsVisible}>Comments <i className="bi bi-search"></i></button>
+                    <form>
+                        <div className='form-floating comment-text'>
+                            <input
+                            className='form-control'
+                                type="text"
+                                name="text"
+                                onChange={onCommentChange}
+                            />
+                            <label className='form-label'>Comment</label>
+                        </div>
+                        <button
+                            className='btn btn-success btn-sm comment-button'
+                            type="submit"
+                            onClick={onSubmit}
+                        ><i className="bi bi-plus-square"></i></button>
+                    </form>
+                </div>
 
-            
-            {commentsVisible && <ShowComment
-                postComment={post.comments}
-                handleDeleteComment={handleDeleteComment}
-            />}
+                {commentsVisible && <ShowComment
+                    postComment={post.comments}
+                    handleDeleteComment={handleDeleteComment}
+                />}
             </>
         }
         </>
